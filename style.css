@@ -1,0 +1,37 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body,main,html{
+    height: 100%;
+    width: 100%;
+}
+main{
+    display: flex;
+}
+#leftUpper{
+    width: 70%;
+    padding: 30vh 0 0 40vh;
+}
+#leftUpper p{
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 10vh;
+    font-style: normal;
+}
+#rightPane{
+    font-family: "Playfair", serif;
+    font-weight: 300;
+    font-size: 4vh;
+    width: 30%;
+    padding: 30vh 0 0 0;
+}
+#rightPane ol{
+    padding: 4vh 0 0 2vw;
+}
+#rightPane li{
+    padding: 1vh 0 0 0;
+}
+#rightPane hr{
+    width: 80%;
+}
