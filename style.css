@@ -1,37 +1,60 @@
-* {
+*{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+    background-color: "black";
+    font-family: "Gilroy";
+    overflow: hidden;
 }
-body,main,html{
-    height: 100%;
+main,body,html{
     width: 100%;
+    height: 100%;
+    background-color: #090909;
 }
-main{
+
+#nav{
     display: flex;
+    flex-direction: colum;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    font-weight: 100;
 }
-#leftUpper{
+
+#whoami{
     width: 70%;
-    padding: 30vh 0 0 40vh;
+    margin: 0 0 0 18%;
+    position: relative;
 }
-#leftUpper p{
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    font-size: 10vh;
-    font-style: normal;
+.reveal{
+    overflow: hidden;
 }
-#rightPane{
-    font-family: "Playfair", serif;
-    font-weight: 300;
-    font-size: 4vh;
-    width: 30%;
-    padding: 30vh 0 0 0;
+#whoami h1{
+    font-weight: 400;
+    line-height: 100px;
+    text-transform: uppercase;
+    font-size: 100px;
+    position: relative;
 }
-#rightPane ol{
-    padding: 4vh 0 0 2vw;
+#whoami h1:nth-child(1){
+    margin-top: 20vh;
+    text-align: left;
 }
-#rightPane li{
-    padding: 1vh 0 0 0;
+#whoami h1:nth-child(2){
+    text-align: center;
 }
-#rightPane hr{
-    width: 80%;
+#whiteScreen{
+    position: absolute;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+    color: black;
+    background-color: aliceblue;
+}
+#greenScreen{
+    position: absolute;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+    background-color: greenyellow;
 }
