@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main,html,body {
+    height: 100vh;
+    width: 100vw;
+}
+#loader{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+ #blackScreen{ 
+     position: absolute; 
+     height: 100%; 
+     width: 100%; 
+     top: 0; 
+     background-color: #0f0f0f; 
+ } 
+ #greenScreen { 
+     position: absolute; 
+     width: 100%; 
+     bottom: 0; 
+     background-color: greenyellow; 
+ } 
+ #whiteScreen { 
+     position: absolute; 
+     width: 100%; 
+     bottom: 0; 
+     background-color: aliceblue; 
+ } 
+
+h1 {
+    display: block;
+    overflow: hidden;
+}
+#child {
+    display: block;
+
+}
