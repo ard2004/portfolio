@@ -29,14 +29,14 @@ tl.to("#loader", {
   height: 0,
   duration: 1,
   ease: Expo.easeInOut,
-})
-  tl.to("#green", {
-    height: 0,
-    delay: -.3,
-    duration: 1,
-  });
-  tl.to("#row #h1 h1",{
-    opacity: 100,
-    duration: 5,
-    stagger: 0.2
-})
+});
+tl.to("#green", {
+  height: 0,
+  delay: -.3,
+  duration: 1,
+});
+tl.to("#row #h1 h1", {
+  opacity: 100,
+  duration: 5,
+  stagger: 0.2,
+});
