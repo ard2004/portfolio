@@ -85,7 +85,7 @@ main {
   margin-top: 1vh;
   display: flex;
   justify-content: space-between;
-    line-height: 1;
+  line-height: 1;
   width: 100%;
   color: #333;
   padding: 0 5vw;
@@ -100,7 +100,7 @@ main {
 .row h5 {
   opacity: 0.4;
 }
-.row:nth-child(3){
-    margin-top: 0;
-    padding-right: 13vw;
+.row:nth-child(3) {
+  margin-top: 0;
+  padding-right: 13vw;
 }
