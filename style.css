@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font: Gilroy;
 }
 html,
 body {
@@ -106,4 +107,49 @@ main {
 .row:nth-child(3) {
   margin-top: 0;
   padding-right: 13vw;
+}
+#work{
+    /* margin-top: 10vw; */
+    width: 100%;
+    min-height: 70vh;
+    background-color: #f2f2f2;
+}
+#work .workrow{
+    padding: 6vw 9vw 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#work h1{
+    font-size: 7vw;
+    font-weight: 600;
+}
+.o-ui-arrow{
+    stroke: rgba(65,65,65,.3);
+    transform: rotate(90deg);
+}
+#images{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+}
+#cnt{
+    margin: 6vw 0 0 6vw;
+    width: 35%;
+    border-radius: 50px;
+    overflow: hidden;
+}
+#cnt img{
+    width: 110%;
+}
+#cnt2{
+    margin-right: 6vw;
+    width: 20%;
+    border-radius: 50px;
+    overflow: hidden;
+}
+#cnt2 img{
+    width: 110%;
 }
