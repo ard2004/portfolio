@@ -134,6 +134,7 @@ main {
     justify-content: space-between;
     position: relative;
     width: 100%;
+    height: 100%;
 }
 #cnt{
     margin: 6vw 0 0 6vw;
