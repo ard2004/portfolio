@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Memories Carousel</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .starry-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0; transform: scale(0.5); }
+            50% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(0.5); }
+        }
+
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .carousel-item {
+            flex: 0 0 auto;
+            width: 300px;
+            height: 400px;
+            margin-right: 1rem;
+            scroll-snap-align: center;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="starry-background" id="starry-background"></div>
+    <div class="container">
+        <h1>Birthday Memories</h1>
+        <div class="carousel" id="image-carousel">
+            <div class="carousel-item">
+                <img src="/placeholder.svg?height=400&width=300" alt="Birthday Memory 1">
+            </div>
+            <div class="carousel-item">
+                <img src="/placeholder.svg?height=400&width=300" alt="Birthday Memory 2">
+            </div>
+            <div class="carousel-item">
+                <img src="/placeholder.svg?height=400&width=300" alt="Birthday Memory 3">
+            </div>
+            <div class="carousel-item">
+                <img src="/placeholder.svg?height=400&width=300" alt="Birthday Memory 4">
+            </div>
+            <div class="carousel-item">
+                <img src="/placeholder.svg?height=400&width=300" alt="Birthday Memory 5">
+            </div>
+            <div class="carousel-item">
+                <img src="/placeholder.svg?height=400&width=300" alt="Birthday Memory 6">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Create starry background
+        function createStarryBackground() {
+            const starryBackground = document.getElementById('starry-background');
+            const numberOfStars = 200; // Increased from 100
+
+            for (let i = 0; i < numberOfStars; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.width = `${Math.random() * 4 + 1}px`; // Increased size
+                star.style.height = star.style.width;
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.animationDelay = `${Math.random() * 3}s`; // Reduced max delay
+                starryBackground.appendChild(star);
+            }
+        }
+
+        // Initialize carousel
+        function initCarousel() {
+            const carousel = document.getElementById('image-carousel');
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+
+            carousel.addEventListener('mousedown', (e) => {
+                isDown = true;
+                startX = e.pageX - carousel.offsetLeft;
+                scrollLeft = carousel.scrollLeft;
+            });
+
+            carousel.addEventListener('mouseleave', () => {
+                isDown = false;
+            });
+
+            carousel.addEventListener('mouseup', () => {
+                isDown = false;
+            });
+
+            carousel.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - carousel.offsetLeft;
+                const walk = (x - startX) * 2;
+                carousel.scrollLeft = scrollLeft - walk;
+            });
+        }
+
+        // Run on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            createStarryBackground();
+            initCarousel();
+        });
+    </script>
+</body>
+</html>
+
+
